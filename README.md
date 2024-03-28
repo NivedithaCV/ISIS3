@@ -568,3 +568,8 @@ Developers should ensure that changes that break the API are well-marked. Before
 
 ### What update cadence does the project anticipate from users and developers?
 The project is in the process of adopting a [Long Term Support](https://github.com/USGS-Astrogeology/ISIS3/discussions/4691)(LTS) model. Once fully adopted, the project assumes that either (1) users and developers will freeze the version they are using with no expectation of updates or (2) users and developers will update at either each LTS version increment (updating every 18 months) or work on the quarterly release (therefore updating every 3 months). Users and developers using the LTS or current release versions will benefit from bug fixes and new non-API breaking features.
+
+
+
+### My project
+I am adding the support for Chandrayaan 2mission IIRS DATA. We have developed the interface IIRS2ISIS for ingesting IIRS data.
