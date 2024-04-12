@@ -1,0 +1,6 @@
+Group = Chandrayaan-2/IIRS
+  Version = 1
+  Library = Chandrayaan2IIRSCamera
+  Routine = Chandrayaan2IIRSCameraPlugin
+EndGroup
+ 

@@ -1,0 +1,64 @@
+
+#This translation table was written to translate the PDS4 xml labels of 
+#Chandrayaan2 iirs data to PvlGroup 
+#Label dictionary : https://isis.astrogeology.usgs.gov/documents/LabelDictionary/LabelDictionary.html
+
+
+Group = StartTime
+    Auto
+    InputPosition   = (Observation_Area, Time_Coordinates)
+    InputKey        = start_date_time
+    OutputName      = StartTime
+    OutputPosition  = (Object, IsisCube, Group, Instrument)
+    Translation     = (*,*)
+End_Group
+
+
+
+Group = SpacecraftName
+  Auto
+  InputPosition        = (Observation_Area, Investigation_Area)
+  InputKey             = name
+  OutputName           = SpacecraftName
+  OutputPosition       = (Object, IsisCube, Group, Instrument)
+  Translation          = (*,*)
+End_Group
+
+Group = SpatialSumming
+  Auto
+  InputPosition        = (Observation_Area, Investigation_Area)
+  InputKey             = name
+  OutputName     = SpatialSumming
+  OutputPosition = (Object, IsisCube, Group, Instrument)
+  Translation    = (1,*)
+End_Group
+
+Group= LineExposureDuration
+  Auto   
+  InputPosition    = (Observation_Area, Mission_Area)
+  InputKey         = isda:line_exposure_duration
+  InputDefault     = 53.060
+  OutputName       = LineExposureDuration
+  OutputPosition   = (Object, IsisCube, Group, Instrument)
+  Translation      = (*,*)
+End_Group
+
+Group = InstrumentId
+  Auto
+  InputPosition        = (Observation_Area, Observing_System, Observing_System_Component)
+  InputKeyDependencies = "tag@type|Instrument"
+  InputKey             = name
+  OutputName           = InstrumentId
+  OutputPosition       = (Object, IsisCube, Group, Instrument)
+  Translation          = (IIRS,*)
+End_Group
+
+Group = TargetName
+  Auto
+  InputPosition        = (Observation_Area,Target_Identification)
+  InputKey             = name
+  OutputName           = TargetName
+  OutputPosition       = (Object, IsisCube, Group, Instrument)
+  Translation          = (*,*)
+End_Group
+

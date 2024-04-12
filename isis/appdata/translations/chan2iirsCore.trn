@@ -1,0 +1,88 @@
+# Translating table created for the translation of xml pds4 data 
+#of chandrayaan2 iirs data to ISIS cube format.
+
+#example for the translation table has been takeen from xmlExample.trn
+#model template and referencce of implementation from ClipperEisCore.trn
+
+
+
+Group = CoreBands
+  Auto
+  InputPosition        = (File_Area_Observational,Array_3D_Spectrum,Axis_Array)
+  InputKey             = elements
+  InputKeyDependencies  = "tag@axis_name|BAND"
+  OutputName           = CoreBands
+  OutputPosition       = (Group,Dimensions)
+  Translation          = (*,*)
+End_Group
+
+
+Group = CoreSamples
+  Auto
+  InputPosition        = (File_Area_Observational,Array_3D_Spectrum,Axis_Array)
+  InputKey             = elements
+  InputKeyDependencies = "tag@axis_name|SAMPLE"
+  OutputName           = CoreSamples
+  OutputPosition       = (Group,Dimensions)
+  Translation          = (*,*)
+End_Group
+
+
+Group = CoreLines
+  Auto
+  InputPosition        = (File_Area_Observational,Array_3D_Spectrum,Axis_Array)
+  InputKey             = elements
+  InputKeyDependencies = "tag@axis_name|LINE"  
+  OutputName           = CoreLines
+  OutputPosition       = (Group,Dimensions)
+  Translation          = (*,*)
+End_Group
+Group = CoreType
+  Auto
+  InputDefault   = 1.0
+  InputPosition  = (File_Area_Observational,Array_3D_Spectrum,Element_Array)
+  InputKey       = data_type
+  OutputName     = CoreType
+  OutputPosition = (Group, Pixels)
+  Translation    = (UnsignedByte, 1)
+  Translation    = (SignedWord, 2)
+  Translation    = (SignedInteger, 3)
+  Translation    = (Real, IEEE754LSBSingle)
+  Translation    = (Real, 5)
+  Translation    = (UnsignedWord, 12)
+  Translation    = (UnsignedInteger, 13)
+  Translation    = (SignedInteger, 14)
+  Translation    = (UnsignedInteger,15)
+End_Group
+
+Group = CoreByteOrder
+  Auto
+  InputPosition        = (File_Area_Observational,Array_3D_Spectrum,Element_Array)
+  InputKey             = data_type
+  OutputName           = CoreByteOrder
+  OutputPosition       = (Group,Pixels)
+  Translation          = (Lsb, IEEE754LSBSingle)
+End_Group
+
+
+Group = CoreBase
+  Auto
+  InputDefault   = 0.0
+  InputPosition  = (File_Area_Observational,Array_3D_Spectrum)
+  InputKey       = offset
+  OutputName     = CoreBase
+  OutputPosition = (Group, Pixels)
+  Translation    = (*,*)
+End_Group
+
+
+Group = CoreMultiplier
+  Auto
+  InputDefault         =1.0
+  InputPosition        = (File_Area_Observational,Array_3D_Spectrum)
+  InputKey             = scaling_factor
+  Dependencies         = "tag@axis_name | Sample"
+  OutputName           = CoreMultiplier
+  OutputPosition       = (Group, Pixels)
+  Translation          = (*, *)
+End_Group
