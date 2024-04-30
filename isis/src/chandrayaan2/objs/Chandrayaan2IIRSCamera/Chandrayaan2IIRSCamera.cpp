@@ -16,15 +16,9 @@
 using namespace std;
 namespace Isis {
   /**
-   * Constructs a Chandrayaan 1 M3 Camera object using the image labels.
+   * Constructs a Chandrayaan 2 IIRS Camera object using the image labels.
    *
-   * @ingroup SpiceInstrumentsAndCameras
-   * @ingroup MarsReconnaissanceOrbiter
-   *
-   * @author 2013-08-18 Stuart Sides and Tracie Sucharski
-   *
-   * @internal
-   *   @history 2013-08-18 Stuart Sides - Original version.
+   * 
    */
   //considering same model as chandryaan2 m3 taking LineScanCamra
   Chandrayaan2IIRSCamera::Chandrayaan2IIRSCamera(Cube &cube) : LineScanCamera(cube) {
