@@ -13,24 +13,11 @@ find files of those names at the top level of this repository. **/
 
 namespace Isis {
   /**
-   * @brief Chandrayaan1 M3 Camera Model
+   * @brief Chandrayaan2 IIRS Camera Model
    *
-   * This is the camera model for the Chandrayaan1 M3 (Moon Mineralogy Mapper) Camera.
+   * This is the camera model for the Chandrayaan2 IIRS .
    *
-   * @ingroup SpiceInstrumentsAndCameras
-   * @ingroup Chandrayaan1
    *
-   * @author 2013-08-18 Stuart Sides
-   *
-   * @internal
-   *   @history 2015-08-11 Ian Humphrey and Makayla Shepherd - Added new data members and methods
-   *                           to get spacecraft and instrument names. Extended unit test to test
-   *                           these methods.
-   *   @history 2015-10-16 Ian Humphrey - Removed declarations of spacecraft and instrument
-   *                           members and methods and removed implementation of these methods
-   *                           since Camera now handles this. References #2335.
-   *   @history 2016-08-01 Kristin Berry - Added to unitTest to test camera model performance on
-   *                           level 2 cubes and to test RA/DEC values. References #2400.
    */
   class Chandrayaan2IIRSCamera : public LineScanCamera {
     public:
